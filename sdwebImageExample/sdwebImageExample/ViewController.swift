@@ -12,6 +12,8 @@ import SDWebImage
 class ViewController: UIViewController {
     @IBOutlet var imgTeste: UIImageView!
 
+    @IBOutlet weak var loadImage: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +23,7 @@ class ViewController: UIViewController {
 
         
         self.imgTeste.sd_setImage(with: url) { (image, error, imageCacheType, imageUrl) in
-
+            self.loadImage.stopAnimating()
         }
 //        
         
@@ -32,7 +34,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 
